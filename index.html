@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Joel P. Joseph works across Data Science, Machine Learning, Data Analytics, Artificial Intelligence, Deep Learning, and applied research." />
+  <meta name="keywords" content="Joel P. Joseph, Data Science, Machine Learning, Data Analytics, Artificial Intelligence, Deep Learning, Research, Python, SQL, Power BI" />
+  <meta name="author" content="Joel P. Joseph" />
+  <meta property="og:title" content="Joel P. Joseph — Data Scientist & ML Engineer" />
+  <meta property="og:description" content="Data, machine learning, and technology education—made clear and useful." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/joel-profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Joel P. Joseph — Data Scientist & ML Engineer</title>
+  <link rel="icon" type="image/png" href="assets/tech-decoded-logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+        colors: { ink: '#080806', gold: '#D8B75D', champagne: '#F7E7B5' },
+        boxShadow: { gold: '0 0 0 1px rgba(216,183,93,.25), 0 12px 40px rgba(181,137,26,.18)' }
+      }}
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#080806;
+      --ink-2:#0e0d0a;
+      --gold:#d8b75d;
+      --champagne:#f7e7b5;
+      --muted:#a7a39a;
+      --line:rgba(255,255,255,.10);
+    }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:Manrope,sans-serif;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(216,183,93,.08), transparent 26rem),
+        radial-gradient(circle at 10% 36%, rgba(216,183,93,.04), transparent 24rem),
+        var(--ink);
+      color:#f8f7f3;
+      min-height:100vh;
+    }
+    .mono { font-family:'DM Mono',monospace; }
+    .gold-text {
+      background:linear-gradient(105deg,#a97a17 0%,#f8df8a 48%,#c29a36 100%);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .grain:before {
+      content:''; pointer-events:none; position:fixed; z-index:60; inset:0; opacity:.025;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+    }
+    .grid-bg {
+      background-image:linear-gradient(rgba(216,183,93,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(216,183,93,.045) 1px,transparent 1px);
+      background-size:54px 54px;
+      mask-image:linear-gradient(to bottom,black 0%,rgba(0,0,0,.8) 42%,transparent 100%);
+    }
+    .premium-nav {
+      background:rgba(8,8,6,.68);
+      box-shadow:0 14px 50px rgba(0,0,0,.18);
+    }
+    .card {
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.014));
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+      transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease,background .35s ease;
+    }
+    .card:hover {
+      border-color:rgba(216,183,93,.55);
+      transform:translateY(-6px);
+      box-shadow:0 0 0 1px rgba(216,183,93,.12),0 22px 60px rgba(0,0,0,.28);
+      background:linear-gradient(145deg,rgba(216,183,93,.07),rgba(255,255,255,.018));
+    }
+    .nav-link { color:#aaa69d; position:relative; transition:color .2s; }
+    .nav-link:after { content:''; position:absolute; left:0; right:100%; bottom:-7px; height:1px; background:var(--gold); transition:right .25s ease; }
+    .nav-link:hover { color:var(--champagne); }
+    .nav-link:hover:after { right:0; }
+    .avatar-shell {
+      position:relative; display:inline-grid; place-items:center; flex:none;
+      width:44px; height:44px; border-radius:999px; padding:2px;
+      background:linear-gradient(135deg,rgba(216,183,93,.95),rgba(255,255,255,.16),rgba(216,183,93,.72));
+      box-shadow:0 0 0 4px rgba(216,183,93,.06),0 10px 28px rgba(0,0,0,.35);
+      transition:transform .25s ease,box-shadow .25s ease;
+    }
+    .avatar-shell:hover { transform:translateY(-1px) scale(1.03); box-shadow:0 0 0 5px rgba(216,183,93,.09),0 14px 34px rgba(0,0,0,.4); }
+    .avatar-shell img { width:100%; height:100%; border-radius:999px; object-fit:cover; object-position:center; border:2px solid rgba(8,8,6,.95); }
+    .avatar-status {
+      position:absolute; right:-1px; bottom:0; width:11px; height:11px; border-radius:999px;
+      background:#b9ff9a; border:2px solid var(--ink);
+      box-shadow:0 0 0 4px rgba(185,255,154,.08);
+    }
+    .profile-chip {
+      display:flex; align-items:center; gap:.7rem; padding:.32rem .55rem .32rem .38rem;
+      border:1px solid rgba(255,255,255,.08); border-radius:999px;
+      background:rgba(255,255,255,.025); backdrop-filter:blur(14px);
+    }
+    .profile-chip:hover { border-color:rgba(216,183,93,.28); }
+    .portrait-wrap { position:relative; isolation:isolate; }
+    .portrait-wrap:before {
+      content:''; position:absolute; inset:9% -8%; z-index:-1; border-radius:50%;
+      background:radial-gradient(circle,rgba(216,183,93,.31),transparent 66%);
+      filter:blur(18px); animation:breathe 5s ease-in-out infinite;
+    }
+    .portrait {
+      aspect-ratio:4/5; width:min(100%,340px); object-fit:cover; object-position:center;
+      border:1px solid rgba(216,183,93,.66);
+      box-shadow:0 0 0 9px rgba(216,183,93,.055),0 30px 80px rgba(0,0,0,.52);
+    }
+    .hero-orb { animation:float 7s ease-in-out infinite; }
+    .float { animation:float 6s ease-in-out infinite; }
+    .reveal { animation:rise .8s both; }
+    .reveal-2 { animation:rise .8s .12s both; }
+    @keyframes breathe { 50% { transform:scale(1.08); opacity:.68; } }
+    @keyframes float { 50% { transform:translateY(-9px); } }
+    @keyframes rise { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:none; } }
+    .eyebrow-line { box-shadow:0 0 16px rgba(216,183,93,.45); }
+    .section-rule { border-color:rgba(255,255,255,.08); }
+    .stat-cell { position:relative; }
+    .stat-cell:before { content:''; position:absolute; inset:auto 0 0; height:1px; background:linear-gradient(90deg,transparent,rgba(216,183,93,.35),transparent); transform:scaleX(0); transition:transform .3s ease; }
+    .stat-cell:hover:before { transform:scaleX(1); }
+
+    .field-card {
+      position:relative; overflow:hidden; min-height:220px;
+      border:1px solid rgba(255,255,255,.09);
+      background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.012));
+      transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
+    }
+    .field-card:before {
+      content:''; position:absolute; width:150px; height:150px; right:-65px; top:-70px;
+      border-radius:50%; background:radial-gradient(circle,rgba(216,183,93,.20),transparent 68%);
+      filter:blur(4px); transition:transform .4s ease;
+    }
+    .field-card:hover {
+      transform:translateY(-7px); border-color:rgba(216,183,93,.50);
+      box-shadow:0 22px 60px rgba(0,0,0,.27),0 0 0 1px rgba(216,183,93,.08);
+    }
+    .field-card:hover:before { transform:scale(1.35); }
+    .field-icon {
+      display:grid; place-items:center; width:44px; height:44px; border-radius:14px;
+      border:1px solid rgba(216,183,93,.35); background:rgba(216,183,93,.06);
+      color:var(--champagne); font-family:'DM Mono',monospace; font-size:.72rem; letter-spacing:.08em;
+    }
+    .service-card {
+      position:relative; overflow:hidden;
+      border:1px solid rgba(216,183,93,.20);
+      background:linear-gradient(145deg,rgba(216,183,93,.075),rgba(255,255,255,.018));
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+    }
+    .service-card:after {
+      content:''; position:absolute; inset:auto -20% -46% auto; width:260px; height:260px; border-radius:50%;
+      background:radial-gradient(circle,rgba(216,183,93,.13),transparent 68%); pointer-events:none;
+    }
+    .service-pill {
+      border:1px solid rgba(216,183,93,.28); background:rgba(216,183,93,.055);
+      border-radius:9999px; padding:.38rem .65rem; color:#ddd0a4;
+      font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.03em;
+    }
+    .service-link {
+      display:inline-flex; align-items:center; justify-content:center; gap:.45rem;
+      border-radius:.8rem; padding:.78rem 1rem; font-size:.82rem; font-weight:800;
+      border:1px solid rgba(216,183,93,.52); color:#f7e7b5; transition:.25s ease;
+    }
+    .service-link:hover { background:#d8b75d; color:#080806; transform:translateY(-2px); }
+    body.light .field-card, body.light .service-card { background:linear-gradient(145deg,#fffdf6,#f4eddd); border-color:rgba(116,83,16,.20); }
+    body.light .field-card:before { opacity:.7; }
+    body.light .field-icon { background:rgba(126,91,19,.06); border-color:rgba(116,83,16,.24); }
+    @media (prefers-reduced-motion:reduce) {
+      *,*:before,*:after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
+    }
+    body.light {
+      --ink:#f7f4eb;
+      background:radial-gradient(circle at 85% 10%,rgba(216,183,93,.13),transparent 26rem),#f7f4eb;
+      color:#17150f;
+    }
+    body.light .premium-nav { background:rgba(247,244,235,.76); box-shadow:0 12px 42px rgba(83,63,19,.07); }
+    body.light .card { background:linear-gradient(145deg,#fffdf6,#f4eddd); border-color:rgba(116,83,16,.22); }
+    body.light .profile-chip { background:rgba(255,255,255,.52); border-color:rgba(83,63,19,.10); }
+    body.light .bg-white\/\[\.025\] { background:rgba(126,91,19,.045)!important; }
+    body.light .text-champagne, body.light .text-stone-200 { color:#262116!important; }
+    body.light .text-stone-300,body.light .text-stone-400,body.light .text-stone-500,body.light .text-stone-600 { color:#645d50!important; }
+    body.light .border-white\/10,body.light .border-white\/15,body.light .border-white\/20 { border-color:rgba(83,63,19,.18)!important; }
+    body.light input,body.light textarea { color:#17150f; background:#fffdf7; border-color:rgba(83,63,19,.25); }
+    body.light .nav-link { color:#554f45; }
+    body.light .timeline:before { box-shadow:0 0 0 5px #f7f4eb; }
+    body.light .avatar-shell img { border-color:#f7f4eb; }
+    body.light .avatar-status { border-color:#f7f4eb; }
+  </style>
+</head>
+<body class="grain overflow-x-hidden antialiased">
+  <div class="fixed inset-x-0 top-0 h-[520px] grid-bg -z-10"></div>
+  <nav class="premium-nav sticky top-0 z-40 border-b border-white/10 backdrop-blur-2xl">
+    <div class="mx-auto flex min-h-[72px] max-w-7xl items-center justify-between gap-4 px-5 py-3.5 lg:px-8">
+      <a href="#home" class="mono text-sm font-medium tracking-[.22em] text-champagne">JP<span class="text-gold">/</span>DA</a>
+      <div class="hidden items-center gap-8 text-sm md:flex">
+        <a class="nav-link" href="#work">Work</a>
+        <a class="nav-link" href="#expertise">Expertise</a>
+        <a class="nav-link" href="#fiverr-services">Services</a>
+        <a class="nav-link" href="#creator">Creator</a>
+        <a class="nav-link" href="#journey">Journey</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+      <div class="flex items-center gap-2.5">
+        <button id="themeToggle" aria-label="Toggle light and dark mode" class="rounded-full border border-white/15 p-2.5 text-champagne transition hover:border-gold hover:bg-white/[.03]" title="Toggle theme">
+          <svg id="moonIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        </button>
+        <a href="#contact" class="hidden rounded-full border border-gold/55 px-4 py-2 text-xs font-bold tracking-[.15em] text-champagne transition hover:bg-gold hover:text-black sm:inline-flex">LET'S TALK</a>
+        <a href="#home" class="profile-chip" aria-label="Open Joel P. Joseph profile">
+          <span class="hidden text-right leading-tight lg:block">
+            <span class="block text-[10px] font-bold uppercase tracking-[.14em] text-champagne">Joel P. Joseph</span>
+            <span class="mono block text-[9px] tracking-wide text-stone-500">DATA · ML · ANALYTICS</span>
+          </span>
+          <span class="avatar-shell">
+            <img src="assets/joel-profile.jpg" alt="Joel P. Joseph profile" />
+            <span class="avatar-status" aria-hidden="true"></span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="mx-auto max-w-7xl px-5 pb-20 pt-20 lg:px-8 lg:pb-28 lg:pt-32">
+      <div class="grid items-center gap-12 lg:grid-cols-[1.45fr_.75fr]">
+      <div class="max-w-4xl">
+        <p class="mono mb-6 flex items-center gap-3 text-[10px] tracking-[.24em] text-gold sm:text-xs"><span class="eyebrow-line h-px w-12 bg-gold"></span> DATA SCIENCE · MACHINE LEARNING · DATA ANALYTICS · AI · DEEP LEARNING · RESEARCH</p>
+        <h1 class="text-[3.45rem] font-extrabold leading-[.98] tracking-[-.045em] sm:text-7xl lg:text-[7rem]">This World Is A One Big<br><span class="gold-text">Data Science Problem.</span></h1>
+        <p class="mt-8 max-w-2xl text-[15px] leading-8 text-stone-300 sm:text-lg">I’m Joel P. Joseph, a Data Analyst pursuing Data Scientist and ML Engineer roles. I turn real-world data into clear analysis, practical dashboards, and actionable insight.</p>
+        <div class="mt-10 flex flex-wrap gap-4"><a href="#work" class="group rounded-full bg-gradient-to-r from-[#b88922] via-[#f0d57f] to-[#b88922] px-6 py-3.5 text-sm font-extrabold text-black shadow-gold transition hover:scale-[1.03]">Explore my work <span class="ml-2 inline-block transition group-hover:translate-x-1">↗</span></a><a href="assets/Joel-P-Joseph-Resume.pdf" download class="rounded-full border border-white/20 px-6 py-3.5 text-sm font-semibold text-stone-200 transition hover:border-gold hover:text-champagne">Download résumé ↓</a></div>
+      </div><div class="portrait-wrap mx-auto w-full max-w-[340px] reveal-2"><img class="portrait rounded-[2rem]" src="assets/joel-profile.jpg" alt="Joel P. Joseph" /><div class="float absolute -bottom-4 -left-4 rounded-2xl border border-gold/45 bg-black/80 px-4 py-3 shadow-2xl backdrop-blur-xl"><p class="mono text-[10px] tracking-[.17em] text-gold">OPEN TO WORK</p><p class="mt-1 text-xs font-bold text-champagne">Remote · India and Abroad</p></div></div></div>
+    </section>
+
+    <section class="border-b border-white/10 bg-gold/[.045]"><div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-5 px-5 py-7 sm:flex-row sm:items-center lg:px-8"><div><p class="mono text-[10px] tracking-[.2em] text-gold">CURRENTLY SEEKING</p><p class="mt-1 text-lg font-bold text-champagne">Data Scientist · Machine Learning Engineer · Data Analyst</p></div><p class="text-sm text-stone-400">Remote · India and Abroad</p></div></section>
+
+    <section id="creator" class="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="grid items-center gap-12 lg:grid-cols-[.9fr_1.1fr]">
+        <div class="relative mx-auto w-full max-w-md"><div class="absolute -inset-8 rounded-full bg-gold/10 blur-3xl"></div><img src="assets/tech-decoded-logo.png" alt="Tech Decoded With Joel logo" class="relative mx-auto aspect-square w-full rounded-[2rem] border border-gold/35 object-cover shadow-gold" /></div>
+        <div><p class="mono text-xs tracking-[.2em] text-gold">01 / CONTENT CREATOR</p><h2 class="mt-3 text-3xl font-bold sm:text-4xl">Tech Decoded<br><span class="gold-text">with Joel.</span></h2><p class="mt-6 max-w-xl leading-7 text-stone-300">My personal tech education platform, where I break down AI, data science, coding, cybersecurity, emerging technologies, and more into simple, visual, and engaging content. It’s where I combine technology, research, storytelling, and design to make complex ideas easier to understand.</p><p class="mono mt-6 text-xs leading-6 tracking-wide text-stone-400">TIPS · TRICKS · TECH KNOWLEDGE</p><div class="mt-8 flex flex-wrap gap-3"><a href="https://www.instagram.com/techdecodedwithjoel/" target="_blank" rel="noopener" class="creator-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>Instagram</a><a href="https://www.youtube.com/@techdecodedwithjoel" target="_blank" rel="noopener" class="creator-link"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.3-.42-4.88a3 3 0 0 0-2.1-2.1C18.9 4.6 12 4.6 12 4.6s-6.9 0-8.48.42a3 3 0 0 0-2.1 2.1C1 8.7 1 12 1 12s0 3.3.42 4.88a3 3 0 0 0 2.1 2.1c1.58.42 8.48.42 8.48.42s6.9 0 8.48-.42a3 3 0 0 0 2.1-2.1C23 15.3 23 12 23 12ZM9.8 15.8V8.2l6.4 3.8-6.4 3.8Z"/></svg>YouTube</a><a href="https://www.amazon.com/dp/B0H8X71Z41" target="_blank" rel="noopener" class="creator-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>My e-book ↗</a></div><div class="mt-8 rounded-xl border border-gold/25 bg-gold/5 p-5"><p class="mono text-[10px] tracking-[.18em] text-gold">FEATURED PUBLICATION</p><a class="mt-2 block text-lg font-bold text-champagne transition hover:text-gold" href="https://www.amazon.com/dp/B0H8X71Z41" target="_blank" rel="noopener">When Machines Learned To Dream: Emerging Technologies ↗</a></div></div>
+      </div>
+    </section>
+
+    <section id="work" class="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="mb-12"><p class="mono text-xs tracking-[.2em] text-gold">01 / BOOKS</p><h2 class="mt-3 text-3xl font-bold sm:text-4xl">Explore my books</h2></div>
+      <div><p class="mono mb-4 text-[10px] tracking-[.2em] text-gold">BOOKS</p><article class="card grid gap-6 rounded-2xl p-6 sm:grid-cols-[auto_1fr_auto] sm:items-center"><div class="flex h-16 w-12 items-center justify-center rounded-md border border-gold/40 bg-gold/10 mono text-xl text-gold">01</div><div><h3 class="text-xl font-bold">When Machines Learned To Dream: Emerging Technologies</h3><p class="mt-2 max-w-2xl text-sm leading-6 text-stone-400">A published exploration of the technologies shaping our future and the ideas behind intelligent machines.</p></div><a href="https://www.amazon.com/dp/B0H8X71Z41" target="_blank" rel="noopener" class="text-sm font-bold text-champagne hover:text-gold">Read on Amazon ↗</a></article></div>
+      <div class="mt-14"><p class="mono mb-4 text-[10px] tracking-[.2em] text-gold">PROJECTS</p><div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"><article class="card rounded-2xl p-6"><div class="mb-10 flex items-start justify-between"><span class="mono text-xs text-gold">01 / MACHINE LEARNING</span><span class="rounded-full border border-gold/30 px-2 py-1 text-[10px] text-champagne">Regression</span></div><h3 class="text-xl font-bold">Car Price Prediction</h3><p class="mt-3 text-sm leading-6 text-stone-400">Built a machine-learning model to estimate car prices from structured vehicle data.</p><div class="mt-6 flex flex-wrap gap-2"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-Learn</span></div><div class="mt-7"><a class="text-sm font-semibold text-champagne hover:text-gold" href="https://github.com/Joel4DC" target="_blank" rel="noopener">GitHub ↗</a></div></article><article class="card rounded-2xl p-6"><div class="mb-10 flex items-start justify-between"><span class="mono text-xs text-gold">02 / MACHINE LEARNING</span><span class="rounded-full border border-gold/30 px-2 py-1 text-[10px] text-champagne">Classification</span></div><h3 class="text-xl font-bold">Parkinson's Disease Detection</h3><p class="mt-3 text-sm leading-6 text-stone-400">Developed a classification model to support early disease-detection analysis.</p><div class="mt-6 flex flex-wrap gap-2"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Data Prep</span></div><div class="mt-7"><a class="text-sm font-semibold text-champagne hover:text-gold" href="https://github.com/Joel4DC" target="_blank" rel="noopener">GitHub ↗</a></div></article><article class="card rounded-2xl p-6"><div class="mb-10 flex items-start justify-between"><span class="mono text-xs text-gold">03 / RECOMMENDATION</span><span class="rounded-full border border-gold/30 px-2 py-1 text-[10px] text-champagne">Personalisation</span></div><h3 class="text-xl font-bold">Netflix Movie Recommender</h3><p class="mt-3 text-sm leading-6 text-stone-400">Prepared a recommendation system to help users discover relevant movies.</p><div class="mt-6 flex flex-wrap gap-2"><span class="tag">Python</span><span class="tag">Data Analysis</span><span class="tag">ML</span></div><div class="mt-7"><a class="text-sm font-semibold text-champagne hover:text-gold" href="https://github.com/Joel4DC" target="_blank" rel="noopener">GitHub ↗</a></div></article></div></div>
+    </section>
+
+    <section id="expertise" class="border-y border-white/10 bg-white/[.025] py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <div>
+            <p class="mono text-xs tracking-[.2em] text-gold">02 / AREAS OF EXPERTISE</p>
+            <h2 class="mt-3 max-w-2xl text-3xl font-bold sm:text-5xl">Six disciplines.<br><span class="gold-text">One data-driven approach.</span></h2>
+          </div>
+          <p class="max-w-md text-sm leading-7 text-stone-400">From exploratory analysis to predictive modelling and research, I work across the data and AI lifecycle with a practical, business-focused mindset.</p>
+        </div>
+
+        <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <article class="field-card rounded-3xl p-6">
+            <div class="flex items-start justify-between gap-4"><span class="field-icon">DS</span><span class="mono text-[9px] tracking-[.18em] text-stone-500">01</span></div>
+            <h3 class="mt-8 text-xl font-bold">Data Science</h3>
+            <p class="mt-3 text-sm leading-7 text-stone-400">End-to-end workflows covering data preparation, exploratory analysis, feature engineering, modelling, evaluation, and insight generation.</p>
+            <div class="mt-6 flex flex-wrap gap-2"><span class="service-pill">EDA</span><span class="service-pill">Statistics</span><span class="service-pill">Modelling</span><span class="service-pill">Feature Engineering</span><span class="service-pill">Data Cleaning</span><span class="service-pill">Hypothesis Testing</span><span class="service-pill">Model Evaluation</span><span class="service-pill">Data Storytelling</span></div>
+          </article>
+          <article class="field-card rounded-3xl p-6">
+            <div class="flex items-start justify-between gap-4"><span class="field-icon">ML</span><span class="mono text-[9px] tracking-[.18em] text-stone-500">02</span></div>
+            <h3 class="mt-8 text-xl font-bold">Machine Learning</h3>
+            <p class="mt-3 text-sm leading-7 text-stone-400">Predictive and classification solutions built around clean features, robust validation, suitable metrics, and practical model interpretation.</p>
+            <div class="mt-6 flex flex-wrap gap-2"><span class="service-pill">Regression</span><span class="service-pill">Classification</span><span class="service-pill">Clustering</span><span class="service-pill">Feature Engineering</span><span class="service-pill">Hyperparameter Tuning</span><span class="service-pill">Cross-Validation</span><span class="service-pill">Ensembling</span><span class="service-pill">Explainability</span></div>
+          </article>
+          <article class="field-card rounded-3xl p-6">
+            <div class="flex items-start justify-between gap-4"><span class="field-icon">DA</span><span class="mono text-[9px] tracking-[.18em] text-stone-500">03</span></div>
+            <h3 class="mt-8 text-xl font-bold">Data Analytics</h3>
+            <p class="mt-3 text-sm leading-7 text-stone-400">Turn raw business data into clear answers using SQL, Python, spreadsheets, statistical reasoning, and interactive dashboards.</p>
+            <div class="mt-6 flex flex-wrap gap-2"><span class="service-pill">SQL</span><span class="service-pill">Excel</span><span class="service-pill">Power BI</span><span class="service-pill">Tableau</span><span class="service-pill">Dashboards</span><span class="service-pill">KPI Analysis</span><span class="service-pill">Reporting</span><span class="service-pill">Business Intelligence</span></div>
+          </article>
+          <article class="field-card rounded-3xl p-6">
+            <div class="flex items-start justify-between gap-4"><span class="field-icon">AI</span><span class="mono text-[9px] tracking-[.18em] text-stone-500">04</span></div>
+            <h3 class="mt-8 text-xl font-bold">Artificial Intelligence</h3>
+            <p class="mt-3 text-sm leading-7 text-stone-400">Explore practical AI applications that connect intelligent systems with real-world use cases, automation, research, and decision support.</p>
+            <div class="mt-6 flex flex-wrap gap-2"><span class="service-pill">AI</span><span class="service-pill">Generative AI</span><span class="service-pill">NLP</span><span class="service-pill">Computer Vision</span><span class="service-pill">LLM Concepts</span><span class="service-pill">RAG</span><span class="service-pill">Embeddings</span><span class="service-pill">Automation</span></div>
+          </article>
+          <article class="field-card rounded-3xl p-6">
+            <div class="flex items-start justify-between gap-4"><span class="field-icon">DL</span><span class="mono text-[9px] tracking-[.18em] text-stone-500">05</span></div>
+            <h3 class="mt-8 text-xl font-bold">Deep Learning</h3>
+            <p class="mt-3 text-sm leading-7 text-stone-400">Neural-network based experimentation across image, sequential, and representation-learning problems as the project requires.</p>
+            <div class="mt-6 flex flex-wrap gap-2"><span class="service-pill">CNN</span><span class="service-pill">RNN</span><span class="service-pill">LSTM</span><span class="service-pill">ANN</span><span class="service-pill">Transfer Learning</span><span class="service-pill">Computer Vision</span><span class="service-pill">Image Classification</span><span class="service-pill">Model Training</span></div>
+          </article>
+          <article class="field-card rounded-3xl p-6">
+            <div class="flex items-start justify-between gap-4"><span class="field-icon">RX</span><span class="mono text-[9px] tracking-[.18em] text-stone-500">06</span></div>
+            <h3 class="mt-8 text-xl font-bold">Research</h3>
+            <p class="mt-3 text-sm leading-7 text-stone-400">Applied research around machine learning, computer vision, data-driven decision-making, and emerging technologies.</p>
+            <div class="mt-6 flex flex-wrap gap-2"><span class="service-pill">Literature Review</span><span class="service-pill">Experiment Design</span><span class="service-pill">Data Analysis</span><span class="service-pill">Model Comparison</span><span class="service-pill">Statistical Testing</span><span class="service-pill">Technical Writing</span><span class="service-pill">Reproducibility</span><span class="service-pill">Insights</span></div>
+          </article>
+        </div>
+
+        <div class="mt-20 border-t border-white/10 pt-14">
+          <div class="grid gap-10 lg:grid-cols-[.8fr_2fr]">
+            <div><p class="mono text-xs tracking-[.2em] text-gold">TECHNICAL TOOLKIT</p><h3 class="mt-3 text-2xl font-bold sm:text-3xl">Analysis meets<br>clear storytelling.</h3></div>
+            <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+              <div><p class="mono mb-3 text-[10px] tracking-[.18em] text-stone-500">LANGUAGES & DATA</p><div class="flex flex-wrap gap-2"><span class="pill">Python</span><span class="pill">SQL</span><span class="pill">R</span><span class="pill">Excel</span><span class="pill">Google Sheets</span></div></div>
+              <div><p class="mono mb-3 text-[10px] tracking-[.18em] text-stone-500">ANALYTICS & ML</p><div class="flex flex-wrap gap-2"><span class="pill">Pandas</span><span class="pill">NumPy</span><span class="pill">SciPy</span><span class="pill">Scikit-Learn</span><span class="pill">XGBoost</span><span class="pill">LightGBM</span><span class="pill">CatBoost</span></div></div>
+              <div><p class="mono mb-3 text-[10px] tracking-[.18em] text-stone-500">VISUALISATION</p><div class="flex flex-wrap gap-2"><span class="pill">Power BI</span><span class="pill">Tableau</span><span class="pill">Matplotlib</span><span class="pill">Seaborn</span><span class="pill">Plotly</span></div></div>
+              <div><p class="mono mb-3 text-[10px] tracking-[.18em] text-stone-500">AI & DEVELOPMENT</p><div class="flex flex-wrap gap-2"><span class="pill">TensorFlow</span><span class="pill">Keras</span><span class="pill">PyTorch</span><span class="pill">OpenCV</span><span class="pill">Hugging Face</span><span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">Jupyter</span><span class="pill">Gradio</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fiverr-services" class="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+        <div>
+          <p class="mono text-xs tracking-[.2em] text-gold">03 / FIVERR SERVICES</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-5xl">Data work you can<br><span class="gold-text">hire me to build.</span></h2>
+        </div>
+        <div class="rounded-full border border-gold/25 bg-gold/[.05] px-4 py-2 mono text-[10px] tracking-[.15em] text-champagne">OPEN FOR FREELANCE PROJECTS</div>
+      </div>
+      <div class="mt-12 grid gap-6 lg:grid-cols-2">
+        <article class="service-card rounded-3xl p-7 sm:p-8">
+          <div class="flex items-start justify-between gap-4"><div><p class="mono text-[10px] tracking-[.2em] text-gold">FIVERR SERVICE 01</p><h3 class="mt-3 text-2xl font-bold">Data Analytics Services</h3></div><span class="field-icon">DA</span></div>
+          <p class="mt-5 max-w-xl text-sm leading-7 text-stone-400">Clean, analyse, visualise, and explain your dataset so you can make sense of the numbers and communicate the findings clearly.</p>
+          <div class="mt-7 grid gap-3 sm:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-black/10 p-4"><p class="font-bold text-sm">What I can deliver</p><p class="mt-2 text-xs leading-6 text-stone-400">Data cleaning · EDA · SQL analysis · Excel analysis · KPI reporting · Power BI / Tableau dashboards</p></div>
+            <div class="rounded-2xl border border-white/10 bg-black/10 p-4"><p class="font-bold text-sm">Best for</p><p class="mt-2 text-xs leading-6 text-stone-400">Business datasets, dashboards, reports, academic analysis, and decision-support projects.</p></div>
+          </div>
+          <div class="mt-7 flex flex-wrap gap-2"><span class="service-pill">Python</span><span class="service-pill">SQL</span><span class="service-pill">Excel</span><span class="service-pill">Power BI</span><span class="service-pill">Tableau</span></div>
+          <div class="mt-8 flex flex-wrap gap-3"><a class="service-link" href="#contact">Request analytics service ↗</a><span class="self-center text-xs text-stone-500">Custom scope & deliverables</span></div>
+        </article>
+
+        <article class="service-card rounded-3xl p-7 sm:p-8">
+          <div class="flex items-start justify-between gap-4"><div><p class="mono text-[10px] tracking-[.2em] text-gold">FIVERR SERVICE 02</p><h3 class="mt-3 text-2xl font-bold">Machine Learning Services</h3></div><span class="field-icon">ML</span></div>
+          <p class="mt-5 max-w-xl text-sm leading-7 text-stone-400">Build a practical machine-learning workflow from preprocessing and feature engineering to model training, evaluation, and clear reporting.</p>
+          <div class="mt-7 grid gap-3 sm:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-black/10 p-4"><p class="font-bold text-sm">What I can deliver</p><p class="mt-2 text-xs leading-6 text-stone-400">Regression · Classification · Feature engineering · Model comparison · Validation · Performance analysis</p></div>
+            <div class="rounded-2xl border border-white/10 bg-black/10 p-4"><p class="font-bold text-sm">Best for</p><p class="mt-2 text-xs leading-6 text-stone-400">Prediction tasks, classification datasets, academic ML projects, prototypes, and experimentation.</p></div>
+          </div>
+          <div class="mt-7 flex flex-wrap gap-2"><span class="service-pill">Python</span><span class="service-pill">Pandas</span><span class="service-pill">Scikit-Learn</span><span class="service-pill">XGBoost</span><span class="service-pill">Model Evaluation</span></div>
+          <div class="mt-8 flex flex-wrap gap-3"><a class="service-link" href="#contact">Request ML service ↗</a><span class="self-center text-xs text-stone-500">Custom scope & deliverables</span></div>
+        </article>
+      </div>
+      <div class="mt-7 rounded-2xl border border-white/10 bg-white/[.018] px-5 py-4 text-sm text-stone-400">Fiverr projects are scoped around the dataset, requirements, expected output, and turnaround time. Share your brief through the contact form and I’ll review the requirements before work begins.</div>
+    </section>
+
+    <section id="about" class="border-y border-white/10 bg-white/[.025] py-24"><div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1.05fr_.95fr] lg:px-8"><div><p class="mono text-xs tracking-[.2em] text-gold">04 / ABOUT</p><h2 class="mt-3 text-3xl font-bold sm:text-4xl">Business context.<br><span class="gold-text">Technical curiosity.</span></h2><p class="mt-6 max-w-xl leading-8 text-stone-300">With a Bachelor of Commerce foundation and hands-on work across operations, analytics, and machine learning, I bring a practical lens to data problems: understand the decision first, then build the analysis that makes it easier.</p><p class="mt-4 max-w-xl leading-8 text-stone-400">I combine Python, SQL, dashboarding, and statistical thinking to turn untidy information into focused stories and useful products.</p></div><div class="grid gap-5 sm:grid-cols-2"><div class="card rounded-2xl p-6"><p class="mono text-[10px] tracking-[.18em] text-gold">CREDENTIALS</p><ul class="mt-4 space-y-3 text-sm leading-6 text-stone-300"><li>Google Data Analytics Professional Certificate</li><li>IBM Data Analyst Professional Certificate</li><li>Python & Computer Vision Bootcamp</li><li>Senior Associate Analytics - NSDC</li></ul></div><div class="card rounded-2xl p-6"><p class="mono text-[10px] tracking-[.18em] text-gold">CURRENTLY BUILDING</p><ul class="mt-4 space-y-3 text-sm leading-6 text-stone-300"><li>Stronger ML project portfolios</li><li>Applied Python analytics workflows</li><li>Clear technology education via Tech Decoded</li><li>Practical data storytelling</li></ul></div></div></div></section>
+
+    <section id="journey" class="mx-auto max-w-5xl px-5 py-24 lg:px-8"><p class="mono text-xs tracking-[.2em] text-gold">05 / JOURNEY</p><h2 class="mt-3 text-3xl font-bold sm:text-4xl">A record of curiosity.</h2><div class="mt-12 border-l border-gold/50 pl-7 sm:pl-10"><div class="timeline"><p class="mono text-xs text-gold">MAR 2024 — OCT 2025</p><h3>Network Engineer / Data Analyst <span class="font-normal text-stone-500">/ Tata Consultancy Services (Openreach)</span></h3><p>Analysed operational datasets for network planning and post-survey work; created job packs and planning documentation for field execution.</p></div><div class="timeline"><p class="mono text-xs text-gold">JUL 2023 — SEP 2023</p><h3>Data Science Intern <span class="font-normal text-stone-500">/ Teachnook</span></h3><p>Built car-price prediction and disease-detection models, performing data preparation, feature engineering, and model evaluation.</p></div><div class="timeline"><p class="mono text-xs text-gold">JUL 2020 — JAN 2022</p><h3>Data Science Intern <span class="font-normal text-stone-500">/ Acmegrade</span></h3><p>Applied statistical techniques and Python-based analysis and visualisation to structured datasets.</p></div></div></section>
+
+    <section id="contact" class="border-t border-white/10 bg-gradient-to-b from-[#101008] to-ink py-24"><div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-2 lg:px-8"><div><p class="mono text-xs tracking-[.2em] text-gold">06 / CONTACT</p><h2 class="mt-4 text-4xl font-bold leading-tight sm:text-5xl">Have a data<br><span class="gold-text">question to solve?</span></h2><p class="mt-6 max-w-md leading-7 text-stone-400">I’m open to data-analytics opportunities, collaborative projects, and thoughtful conversations.</p><a class="mt-8 inline-block text-lg font-semibold text-champagne hover:text-gold" href="mailto:joelpjosephofficial@gmail.com">joelpjosephofficial@gmail.com ↗</a><p class="mt-3 text-sm text-stone-400">Bhopal, India · +91 62613 33271</p><div class="mt-5 flex gap-5 text-sm font-semibold"><a class="text-champagne hover:text-gold" href="https://github.com/Joel4DC" target="_blank" rel="noopener">GitHub ↗</a><a class="text-champagne hover:text-gold" href="https://www.linkedin.com/in/joel-p-joseph-131b1620a" target="_blank" rel="noopener">LinkedIn ↗</a></div></div><form id="contactForm" class="grid gap-5 rounded-2xl border border-white/10 bg-black/20 p-6 sm:p-8"><div class="grid gap-5 sm:grid-cols-2"><label>Name<input required type="text" placeholder="Your name" /></label><label>Email<input required type="email" placeholder="you@company.com" /></label></div><label>How can I help?<textarea required rows="4" placeholder="Tell me a little about your requirement."></textarea></label><button class="mt-2 rounded-lg bg-gold px-5 py-3.5 text-sm font-extrabold text-black transition hover:bg-champagne">Send inquiry ↗</button><p id="formNote" class="hidden text-sm text-champagne" role="status">Thank you — your message is ready to send.</p></form></div></section>
+  </main>
+  <footer class="border-t border-white/10 px-5 py-6 text-center mono text-[10px] tracking-[.15em] text-stone-600">© 2026 JOEL P. JOSEPH · DATA · AI · ML · BUILT WITH INTENTION</footer>
+  <style>.tag,.pill{border:1px solid rgba(216,183,93,.25);border-radius:9999px;padding:.28rem .58rem;font-family:'DM Mono',monospace;font-size:10px;color:#ddd0a4}.pill{background:rgba(216,183,93,.05)}label{display:grid;gap:.5rem;font-size:.78rem;font-weight:700;color:#d6d3cc}input,textarea{width:100%;border-radius:.45rem;border:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.35);padding:.75rem;color:#fff;outline:none;transition:.2s}input:focus,textarea:focus{border-color:#d8b75d;box-shadow:0 0 0 3px rgba(216,183,93,.12)}.timeline{position:relative;padding-bottom:2.8rem}.timeline:before{content:'';position:absolute;left:-2.08rem;top:.1rem;width:.62rem;height:.62rem;border-radius:50%;background:#d8b75d;box-shadow:0 0 0 5px #080806}.timeline h3{margin-top:.55rem;font-size:1.1rem;font-weight:700}.timeline p:last-child{margin-top:.5rem;max-width:38rem;font-size:.9rem;line-height:1.6;color:#9c9a94}.creator-link{display:inline-flex;align-items:center;gap:.55rem;border:1px solid rgba(216,183,93,.42);border-radius:9999px;padding:.7rem 1rem;font-size:.82rem;font-weight:700;color:#f7e7b5;transition:.25s}.creator-link:hover{background:#d8b75d;color:#080806;transform:translateY(-2px)}.creator-link svg{width:17px;height:17px}</style>
+  <script>
+    document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => { const key=button.dataset.filter; document.querySelectorAll('.filter').forEach(b=>b.className='filter rounded-full border border-white/15 px-3 py-1.5 text-xs text-stone-300'); button.className='filter rounded-full border border-gold bg-gold px-3 py-1.5 text-xs font-bold text-black'; document.querySelectorAll('.project').forEach(card=>card.style.display=(key==='all'||card.dataset.category===key)?'block':'none'); }));
+    document.getElementById('contactForm').addEventListener('submit', e => { e.preventDefault(); const fields=e.currentTarget.querySelectorAll('input, textarea'); const subject=encodeURIComponent(`Portfolio inquiry from ${fields[0].value}`); const body=encodeURIComponent(`Name: ${fields[0].value}\nEmail: ${fields[1].value}\n\nMessage:\n${fields[2].value}`); window.location.href=`mailto:joelpjosephofficial@gmail.com?subject=${subject}&body=${body}`; document.getElementById('formNote').textContent='Your email app is opening with your message ready to send.'; document.getElementById('formNote').classList.remove('hidden'); });
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('joel-portfolio-theme');
+    if (savedTheme === 'light') document.body.classList.add('light');
+    themeToggle.addEventListener('click', () => { document.body.classList.toggle('light'); localStorage.setItem('joel-portfolio-theme', document.body.classList.contains('light') ? 'light' : 'dark'); });
+  </script>
+</body>
+</html>
